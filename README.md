@@ -1,0 +1,2 @@
+# typescript-note
+notes
