@@ -1,2 +1,11 @@
 # typescript-note
-notes
+
+
+
+
+
+
+
+
+
+
