@@ -167,6 +167,7 @@ nodemon --watch example -e ts --exec ts-node index.ts
         "target": "es5",                // 配置编译目标代码的版本标准
         "module": "commonjs",           // 配置编译目标使用的模块化标准
         "outDir": "dist",               // 配置编译结果输出目录
+        "strictNullChecks": true,       // 空类型检查( null & undefined )
         
     },
     "include": [                        // 指定编译目录
