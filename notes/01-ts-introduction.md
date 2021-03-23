@@ -129,6 +129,38 @@ eg:
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -//
 
 
+/**
+ * ts-node_cli
+ * 
+ * 
+ * 将 ts 代码在内存中完成编译，同时完成运行
+ */
+
+npm i -D/-g ts-node
+
+
+
+
+/**
+ * nodemon
+ * 
+ * 
+ * 监测 ts 文件变化
+ */
+
+npm i -g nodemon
+
+nodemon --watch [dir] -e [extension] --exec [Statement]
+
+
+eg:
+
+nodemon --watch example -e ts --exec ts-node index.ts
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -//
+
+
 {
     "compilerOptions": { 
     
