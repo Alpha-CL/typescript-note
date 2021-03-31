@@ -55,14 +55,13 @@ class Deck {
         console.log(result);
     }
     shuffle() {
-        // console.log('shuf');
         for (let i = 0; i < this._cards.length; i++) {
             const targetIndex = this._getRandom(0, this._cards.length), temp = this._cards[i];
-            // console.log(targetIndex, temp);
             this._cards[i] = this._cards[targetIndex];
             this._cards[targetIndex] = temp;
         }
     }
+    // publish(): [Card[], Card[], Card[], Card[]] {
     // publish(): [Deck, Deck, Deck, Deck] {
     //
     //    let player1: Deck,
@@ -75,27 +74,26 @@ class Deck {
     //     player3 = this._tackCards(17);
     //     left = new Deck(this._cards);
     //
-    //     return [player1, player2, player3, left];
-    // }
-    // publish(): PublishResult {
-    //
-    //     let player1: Deck,
-    //         player2: Deck,
-    //         player3: Deck,
-    //         left: Deck
-    //
-    //     player1 = this._tackCards(17);
-    //     player2 = this._tackCards(17);
-    //     player3 = this._tackCards(17);
-    //     left = new Deck(this._cards);
-    //
-    //     return {
+    //     return [
     //         player1,
     //         player2,
     //         player3,
     //         left
-    //     };
+    //     ];
     // }
+    publish() {
+        let player1, player2, player3, left;
+        player1 = this._tackCards(17);
+        player2 = this._tackCards(17);
+        player3 = this._tackCards(17);
+        left = new Deck(this._cards);
+        return {
+            player1,
+            player2,
+            player3,
+            left,
+        };
+    }
     _getRandom(min, max) {
         const dec = max - min;
         return Math.floor(Math.random() * dec + min);

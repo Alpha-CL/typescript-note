@@ -11,9 +11,9 @@ import {Color, Mark} from "./enums";
 interface PublishResult {
 
     player1: Deck,
-    Player2: Deck,
-    Player3: Deck,
-    left: Deck
+    player2: Deck,
+    player3: Deck,
+    left: Deck,
 }
 
 class Deck {
@@ -94,19 +94,18 @@ class Deck {
 
     shuffle() {
 
-        // console.log('shuf');
-
         for (let i = 0; i < this._cards.length; i++) {
 
             const targetIndex = this._getRandom(0, this._cards.length),
                 temp = this._cards[i];
 
-            // console.log(targetIndex, temp);
-
             this._cards[i] = this._cards[targetIndex];
             this._cards[targetIndex] = temp;
         }
     }
+
+
+    // publish(): [Card[], Card[], Card[], Card[]] {
 
     // publish(): [Deck, Deck, Deck, Deck] {
     //
@@ -120,28 +119,33 @@ class Deck {
     //     player3 = this._tackCards(17);
     //     left = new Deck(this._cards);
     //
-    //     return [player1, player2, player3, left];
-    // }
-
-    // publish(): PublishResult {
-    //
-    //     let player1: Deck,
-    //         player2: Deck,
-    //         player3: Deck,
-    //         left: Deck
-    //
-    //     player1 = this._tackCards(17);
-    //     player2 = this._tackCards(17);
-    //     player3 = this._tackCards(17);
-    //     left = new Deck(this._cards);
-    //
-    //     return {
+    //     return [
     //         player1,
     //         player2,
     //         player3,
     //         left
-    //     };
+    //     ];
     // }
+
+    publish(): PublishResult {
+
+        let player1: Deck,
+            player2: Deck,
+            player3: Deck,
+            left: Deck
+
+        player1 = this._tackCards(17);
+        player2 = this._tackCards(17);
+        player3 = this._tackCards(17);
+        left = new Deck(this._cards);
+
+        return {
+            player1,
+            player2,
+            player3,
+            left,
+        };
+    }
 
     private _getRandom(min: number, max: number) {
 

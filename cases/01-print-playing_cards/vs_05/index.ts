@@ -21,25 +21,25 @@ console.log('============= 洗牌 =============')
 
 newDeck.print();
 
-// const result = newDeck.publish();
-//
-// console.log('============= 发牌 =============')
-//
-// console.log('============= player1 =============')
-//
-// console.log(result.player1.print());
-//
-// console.log('============= player2 =============')
-//
-// console.log(result.player1.print());
-//
-// console.log('============= player3 =============')
-//
-// console.log(result.player1.print());
-//
-// console.log('============= left =============')
-//
-// console.log(result.left.print());
+const result = newDeck.publish();
+
+console.log('============= 发牌 =============')
+
+console.log('============= player1 =============')
+
+console.log(result.player1.print());
+
+console.log('============= player2 =============')
+
+console.log(result.player1.print());
+
+console.log('============= player3 =============')
+
+console.log(result.player1.print());
+
+console.log('============= left =============')
+
+console.log(result.left.print());
 
 
 

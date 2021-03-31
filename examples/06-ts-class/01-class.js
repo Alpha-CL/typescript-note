@@ -4,12 +4,14 @@
  * ts-class
  *
  *
- ** "strictPropertyInitialization": true,       // 是否严格检查初始值
- *  属性初始化位置
+ ** 属性初始化位置             // ts 规定 class 中 属性必须初始化
  *      - 1. 构造函数中
  *      - 2. 属性默认值
+ *
+ ** "strictPropertyInitialization": true,       // 严格检查属性是否有初始值
  */
 class User {
+    // gender: string;                                      // 开启严格检查后，会报错( 必须初始化赋值 )
     constructor(name = 'alpha', age) {
         this.age = 18; // 可以在属性列表中设置默认值
         /** 无法后期动态增加 **/
@@ -20,7 +22,7 @@ class User {
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -//
 class User1 {
     constructor(name = 'alpha', age) {
-        this.age = 18; // 可以在属性列表中设置默认值
+        this.age = 18; // defVal_method_02: 可以在属性列表中设置默认值
         /** 无法后期动态增加 **/
         this.name = name; // 属性初始化: 必须添加描述属性的类型
         this.age = age; // 属性初始化: 必须添加描述属性的类型
@@ -38,7 +40,7 @@ class User1 {
  ** protected               //
  */
 class User2 {
-    /** public: 公共属性修饰符 **/
+    /** public( defaul ): 默认公共属性修饰符 **/
     constructor(name = 'alpha', age) {
         /** private: 私有属性修饰符 **/
         this.publicNumber = 3; // 私有属性
@@ -69,7 +71,7 @@ class User3 {
     /** 属性列表 **/
     // name: string;
     // age: number;
-    /** 在构造函数中为参数直接添加 "修饰符" 则可以省略在属性列中声明属性类型 **/
+    /** 语法糖: 在构造函数中为参数直接添加 "修饰符" 则可以省略在属性初始化 **/
     constructor(name = 'alpha', age) {
         this.name = name;
         this.age = age;
