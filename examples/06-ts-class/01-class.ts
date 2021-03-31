@@ -5,10 +5,11 @@
  * ts-class
  *
  *
- ** "strictPropertyInitialization": true,       // 是否严格检查初始值
- *  属性初始化位置
+ ** 属性初始化位置             // ts 规定 class 中 属性必须初始化
  *      - 1. 构造函数中
  *      - 2. 属性默认值
+ *
+ ** "strictPropertyInitialization": true,       // 严格检查属性是否有初始值
  */
 
 
@@ -17,6 +18,7 @@ class User {
     /** 使用属性列表: 描述属性的类型( 编译后不存在 ) **/
     name: string;
     age: number = 18;                                       // 可以在属性列表中设置默认值
+    // gender: string;                                      // 开启严格检查后，会报错( 必须初始化赋值 )
 
     constructor(name: string = 'alpha', age: number) {      // 可以在参数中设置默认值
 
@@ -34,15 +36,15 @@ class User1 {
 
     /** 使用属性列表: 描述属性的类型( 编译后不存在 ) **/
     name: string;
-    age: number = 18;                                       // 可以在属性列表中设置默认值
+    age: number = 18;                                       // defVal_method_02: 可以在属性列表中设置默认值
 
     /** 可使用 "key?" 或 "val1 | undefined" 表示允许返回 undefined **/
     gender?: 'male' | 'female';             // 可选修饰符，允许返回 undefined
-    sex: 'male' | 'female' | undefined;
+    sex: 'male' | 'female' | undefined;     // === sex? : 'male' | 'female';
 
     pid?: string;
 
-    constructor(name: string = 'alpha', age: number) {      // 可以在参数中设置默认值
+    constructor(name: string = 'alpha', age: number) {      // defVal_method_01: 可以在参数中设置默认值
 
         /** 无法后期动态增加 **/
         this.name = name;                   // 属性初始化: 必须添加描述属性的类型
@@ -77,7 +79,7 @@ class User2 {
     private curNumber: number = 0;          // 私有属性
 
 
-    /** public: 公共属性修饰符 **/
+    /** public( defaul ): 默认公共属性修饰符 **/
 
     constructor(name: string = 'alpha', age: number) {      // 可以在参数中设置默认值
 
@@ -121,7 +123,7 @@ class User3 {
     // name: string;
     // age: number;
 
-    /** 在构造函数中为参数直接添加 "修饰符" 则可以省略在属性列中声明属性类型 **/
+    /** 语法糖: 在构造函数中为参数直接添加 "修饰符" 则可以省略在属性初始化 **/
     constructor(public name: string = 'alpha', private age: number) {
 
         this.name = name;
