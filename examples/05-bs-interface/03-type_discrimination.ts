@@ -18,7 +18,6 @@
 
 interface Duck {
     sound: "嘎嘎嘎",
-
     swim(): void
 }
 

@@ -14,6 +14,7 @@ interface interfaceUser {
     sayHello: () => void
 }
 
+
 let u1: interfaceUser = {
     name: 'alpha',
     age: 18,
@@ -27,6 +28,7 @@ type typeUser = {
     age: number,
     sayHello(): void
 }
+
 
 let u2: typeUser = {
     name: 'alpha',

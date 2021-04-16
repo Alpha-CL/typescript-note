@@ -11,7 +11,7 @@
 type userInfo = {
     name: string,
     age: number,
-    sex: gender
+    sex: gender,
 };
 
 type gender = 'male' | 'female';
