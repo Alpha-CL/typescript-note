@@ -1,0 +1,8 @@
+.board {
+    margin: 50px auto 20px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 150px;
+    border: 1px solid lightgray;
+    //box-sizing: border-box;
+}

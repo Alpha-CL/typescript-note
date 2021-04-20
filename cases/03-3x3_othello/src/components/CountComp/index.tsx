@@ -1,17 +1,17 @@
 import React from 'react';
 
-
-interface Props{
-
+interface IProps {
     num: number,
-    onChange?: (n: number) => void,
+    onChange?: (n: number) => void
 }
 
+type Props = {};
 
-export default function CountComp(props: Props) {
+/** React.FC( 有props.children ) 用于约束函数式组件 **/
+export const CountComp: React.FC<IProps> = (props) => {
 
     return (
-        <div className="warp">
+        <div>
             <button onClick={() => {
                 if (props.onChange) {
                     props.onChange(props.num - 1);
@@ -19,11 +19,12 @@ export default function CountComp(props: Props) {
             }}>-
             </button>
             <span>{props.num}</span>
-            <button onClick={()=> {
+            <button onClick={() => {
                 if (props.onChange) {
-                    props.onChange(props.num + 1)
+                    props.onChange(props.num + 1);
                 }
-            }}>+</button>
+            }}>+
+            </button>
         </div>
     );
-}
+};
