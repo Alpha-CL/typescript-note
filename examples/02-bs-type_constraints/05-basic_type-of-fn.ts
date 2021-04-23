@@ -28,8 +28,8 @@ function combine(a: number | string, b: number | string): number | string {
     throw  new Error('[a and b must be the same type]');
 }
 
-const combineRes_01 = combine(2, 6);
-const combineRes_02 = combine('a', 'b');
+// const combineRes_01 = combine(2, 6);
+// const combineRes_02 = combine('a', 'b');
 
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -//
@@ -54,6 +54,8 @@ function sum(a: number, b: number, c?: number): number {
 
 const sumRes_01 = sum(1, 2, 3);
 const sumRes_02 = sum(1, 2);
+
+console.log(sumRes_01, sumRes_02);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

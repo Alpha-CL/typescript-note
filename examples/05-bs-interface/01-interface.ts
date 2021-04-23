@@ -47,7 +47,7 @@ let u2: typeUser = {
 
 type typeCondition = (n: number) => boolean;
 
-type typeCondition2 = {         // {} 为 定界符，并不是 对象
+type typeCondition2 = {             // {} 为 定界符，并不是 对象
     (n: number): boolean
 };
 

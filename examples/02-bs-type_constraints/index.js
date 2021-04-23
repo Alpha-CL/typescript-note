@@ -4,5 +4,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("./01-basic-type");
 require("./02-other-type");
 require("./03-type-alias");
-require("./04-fn-type");
+require("./04-type-enum");
+require("./05-basic_type-of-fn");
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

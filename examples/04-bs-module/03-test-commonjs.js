@@ -37,6 +37,6 @@ const fs_1 = require("fs");
 fs_1.readFileSync("./");
 //-------------------------------------------------------------------------------------------------------------------//
 /** 导入 commonjs 模块时，仅需要在倒入之前加入 import 即可( ts 内部就可以类型检查了 ) **/
-const testCommonjs = require("./module-commonjs");
+const testCommonjs = require("./01-module-commonjs");
 console.log(testCommonjs.name);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

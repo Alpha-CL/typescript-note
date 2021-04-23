@@ -20,6 +20,10 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "create-react-app": "^4.0.3"
+    "axios": "^0.21.1",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "create-react-app": "^4.0.3",
+    "reflect-metadata": "^0.1.13"
   }
 }

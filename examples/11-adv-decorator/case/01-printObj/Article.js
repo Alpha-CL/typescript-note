@@ -1,0 +1,12 @@
+"use strict";
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Object.defineProperty(exports, "__esModule", { value: true });
+const Descriptor_1 = require("./Descriptor");
+class Article {
+}
+const ar = new Article();
+ar.title = 'Title';
+ar.content = 'content content  content content content content content content content';
+ar.data = new Date();
+Descriptor_1.printObj(ar);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
